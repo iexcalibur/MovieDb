@@ -19,7 +19,7 @@ struct SearchBar: View {
                 TextField(placeholder, text: $text, onEditingChanged: { _ in
                     onSearchChanged(text)
                 })
-                .onChange(of: text) { newValue in
+                .onChange(of: text) { oldValue, newValue in
                     onSearchChanged(newValue)
                 }
                 .padding(geometry.size.height * 0.1)
